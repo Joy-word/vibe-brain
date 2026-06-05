@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap mp">
+
+  <!--
+    ⚠️ 以下三个值必须与 Partner Center → 产品标识 完全一致：
+       Name      → Package/Identity/Name
+       Publisher → Package/Identity/Publisher
+       Version   → 与 .csproj 的 ApplicationDisplayVersion 保持一致（四段式）
+  -->
+  <Identity
+    Name="21703FlyJoyce.BrainEx"
+    Publisher="CN=E31D028F-5B65-4BCD-A608-331FFC458215"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity
+    PhoneProductId="9128DAA3-13BF-4AB0-AE09-339A59B584A3"
+    PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>大脑多开器</DisplayName>
+    <PublisherDisplayName>FlyJoyce</PublisherDisplayName>
+    <Logo>$placeholder$.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop"   MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements
+        DisplayName="大脑多开器"
+        Description="AI 工作流待办队列，让你在多个 AI 任务之间自由切换，不再忘事。"
+        Square150x150Logo="$placeholder$.png"
+        Square44x44Logo="$placeholder$.png"
+        BackgroundColor="transparent">
+        <uap:DefaultTile
+          Square71x71Logo="$placeholder$.png"
+          Wide310x150Logo="$placeholder$.png"
+          Square310x310Logo="$placeholder$.png" />
+        <uap:SplashScreen Image="$placeholder$.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <!-- 允许读取用户通知（UserNotificationListener） -->
+    <rescap:Capability Name="userNotificationListener" />
+  </Capabilities>
+
+</Package>

@@ -1,0 +1,115 @@
+# ===========================
+# .NET / C#
+# ===========================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# ===========================
+# .NET MAUI / Xamarin
+# ===========================
+*.apk
+*.aab
+*.ipa
+*.dSYM/
+*.app/
+*.aar
+*.symbols/
+*.appxbundle
+*.appxupload
+*.appx
+*.msix
+*.msixbundle
+*.build.appxrecipe
+
+# Android
+Platforms/Android/Resources/Resource.designer.cs
+__Microsoft.Android.Resource.Designer.cs
+
+# iOS / macOS
+Platforms/iOS/obj/
+Platforms/MacCatalyst/obj/
+
+# ===========================
+# Visual Studio
+# ===========================
+.vs/
+*.rsuser
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.ilk
+*.meta
+*.bak
+*.exp
+*.lib
+*.sbr
+.vscode/
+*.cache
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+packages/
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# ===========================
+# 构建产物
+# ===========================
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# ===========================
+# 操作系统
+# ===========================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ===========================
+# 敏感信息 / 本地配置
+# ===========================
+*.env
+*.env.local
+appsettings.Local.json
+secrets.json
