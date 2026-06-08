@@ -22,7 +22,7 @@
     PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>大脑多开器</DisplayName>
+    <DisplayName>BrainEx</DisplayName>
     <PublisherDisplayName>FlyJoyce</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
   </Properties>
@@ -34,12 +34,14 @@
 
   <Resources>
     <Resource Language="x-generate" />
+    <Resource Language="en-US" />
+    <Resource Language="zh-Hans" />
   </Resources>
 
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="大脑多开器"
+        DisplayName="BrainEx"
         Description="AI 工作流待办队列，让你在多个 AI 任务之间自由切换，不再忘事。"
         Square150x150Logo="$placeholder$.png"
         Square44x44Logo="$placeholder$.png"

@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:BrainEx.ViewModels"
              xmlns:m="clr-namespace:BrainEx.Models"
+             xmlns:res="clr-namespace:BrainEx.Resources.Strings"
              x:Class="BrainEx.MainPage"
-             Title="大脑多开器"
+             Title="{x:Static res:AppResources.AppTitle}"
              BackgroundColor="{AppThemeBinding Light=#F2F2F7, Dark=#1C1C1E}">
 
     <ContentPage.BindingContext>
@@ -18,7 +19,7 @@
 
             <!-- 标题区 -->
             <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
-                <Label Text="🧠 大脑多开器"
+                <Label Text="{x:Static res:AppResources.AppTitle}"
                        FontSize="20" FontAttributes="Bold"
                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#F5F5F7}" />
                 <Label Text="{Binding StatusText}"
@@ -63,7 +64,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="{Binding PendingCount}" />
-                            <Span Text=" 待处理" />
+                            <Span Text="{x:Static res:AppResources.StatPending}" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -77,7 +78,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="{Binding InProgressCount}" />
-                            <Span Text=" 进行中" />
+                            <Span Text="{x:Static res:AppResources.StatInProgress}" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -95,7 +96,7 @@
                     Padding="6,3" />
 
             <Button Grid.Column="4"
-                    Text="清除"
+                    Text="{x:Static res:AppResources.BtnClearDone}"
                     Command="{Binding ClearDoneCommand}"
                     BackgroundColor="Transparent"
                     TextColor="{AppThemeBinding Light=#FF3B30, Dark=#FF453A}"
@@ -109,11 +110,11 @@
             <CollectionView.EmptyView>
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
                     <Label Text="🫙" FontSize="40" HorizontalOptions="Center" />
-                    <Label Text="队列为空"
+                    <Label Text="{x:Static res:AppResources.EmptyTitle}"
                            FontSize="16" FontAttributes="Bold"
                            TextColor="{AppThemeBinding Light=#636366, Dark=#8E8E93}"
                            HorizontalOptions="Center" />
-                    <Label Text="开始监听后，AI 的通知会自动出现在这里"
+                    <Label Text="{x:Static res:AppResources.EmptySubtitle}"
                            FontSize="13"
                            TextColor="{AppThemeBinding Light=#AEAEB2, Dark=#636366}"
                            HorizontalOptions="Center" />
@@ -149,7 +150,7 @@
                         <SwipeView IsVisible="{Binding IsNotDone}">
                             <SwipeView.RightItems>
                                 <SwipeItems>
-                                    <SwipeItem Text="完成 ✓"
+                                    <SwipeItem Text="{x:Static res:AppResources.SwipeDone}"
                                                BackgroundColor="#34C759"
                                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.MarkDoneCommand}"
                                                CommandParameter="{Binding .}" />
@@ -238,7 +239,7 @@
                                                          Spacing="6" MinimumWidthRequest="70">
 
                                         <!-- Pending：开始按钮 -->
-                                        <Button Text="▶ 开始"
+                                        <Button Text="{x:Static res:AppResources.BtnStart}"
                                                 FontSize="12"
                                                 Padding="10,5"
                                                 CornerRadius="8"
@@ -249,7 +250,7 @@
                                                 CommandParameter="{Binding .}" />
 
                                         <!-- InProgress：跳转 IDE + 完成 两个按钮 -->
-                                        <Button Text="🔀 IDE"
+                                        <Button Text="{x:Static res:AppResources.BtnIDE}"
                                                 FontSize="12"
                                                 Padding="10,5"
                                                 CornerRadius="8"
@@ -259,7 +260,7 @@
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FocusIdeCommand}"
                                                 CommandParameter="{Binding .}" />
 
-                                        <Button Text="✓ 完成"
+                                        <Button Text="{x:Static res:AppResources.BtnDone}"
                                                 FontSize="12"
                                                 Padding="10,5"
                                                 CornerRadius="8"
@@ -283,7 +284,7 @@
             <Frame Grid.Column="0" Padding="4,0" CornerRadius="10" HasShadow="False"
                    BackgroundColor="{AppThemeBinding Light=White, Dark=#2C2C2E}">
                 <Entry x:Name="ManualEntry"
-                       Placeholder="手动添加任务…"
+                       Placeholder="{x:Static res:AppResources.ManualPlaceholder}"
                        ReturnType="Done"
                        Completed="OnManualEntryCompleted"
                        FontSize="14" />

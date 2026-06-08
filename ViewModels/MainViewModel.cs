@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using BrainEx.Models;
 using BrainEx.Services;
+using BrainEx.Resources.Strings;
 
 namespace BrainEx.ViewModels;
 
@@ -27,7 +28,7 @@ public class MainViewModel : INotifyPropertyChanged
             OnPropertyChanged(nameof(VisibleQueue));
         }
     }
-    public string ShowDoneText => ShowDone ? "隐藏已完成" : "显示已完成";
+    public string ShowDoneText => ShowDone ? AppResources.BtnHideDone : AppResources.BtnShowDone;
 
     /// <summary>UI 绑定的实际列表（按 ShowDone 过滤）</summary>
     public IEnumerable<TaskItem> VisibleQueue =>
@@ -42,14 +43,14 @@ public class MainViewModel : INotifyPropertyChanged
         set { _isListening = value; OnPropertyChanged(); OnPropertyChanged(nameof(ListenButtonText)); }
     }
 
-    private string _statusText = "未开始监听";
+    private string _statusText = AppResources.StatusIdle;
     public string StatusText
     {
         get => _statusText;
         set { _statusText = value; OnPropertyChanged(); }
     }
 
-    public string ListenButtonText => IsListening ? "⏹ 停止" : "▶ 监听";
+    public string ListenButtonText => IsListening ? AppResources.BtnStop : AppResources.BtnListen;
 
     // ── 置顶状态 ──
     private bool _isPinned;
@@ -136,7 +137,7 @@ public class MainViewModel : INotifyPropertyChanged
         AddManualCommand = new Command<string>(title =>
         {
             if (string.IsNullOrWhiteSpace(title)) return;
-            Queue.Add(new TaskItem { SourceApp = "手动", Title = title });
+            Queue.Add(new TaskItem { SourceApp = AppResources.SourceManual, Title = title });
             RefreshCounts();
         });
     }
@@ -148,7 +149,7 @@ public class MainViewModel : INotifyPropertyChanged
             _cts?.Cancel();
             _notifService.Stop();
             IsListening = false;
-            StatusText = "已停止监听";
+            StatusText = AppResources.StatusStopped;
         }
         else
         {
@@ -158,16 +159,16 @@ public class MainViewModel : INotifyPropertyChanged
                 bool granted = await _notifService.RequestPermissionAsync();
                 if (!granted)
                 {
-                    StatusText = "⚠️ 未获得通知权限，请在系统设置中授权";
+                    StatusText = AppResources.StatusNoPermission;
                     return;
                 }
                 await _notifService.StartAsync(_cts.Token);
                 IsListening = true;
-                StatusText = "👂 正在监听通知…";
+                StatusText = AppResources.StatusListening;
             }
             catch (Exception ex)
             {
-                StatusText = $"错误：{ex.Message}";
+                StatusText = string.Format(AppResources.StatusError, ex.Message);
             }
         }
     }

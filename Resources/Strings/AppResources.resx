@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- App title & status -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>🧠 Brain Overloader</value>
+  </data>
+  <data name="StatusIdle" xml:space="preserve">
+    <value>Not listening</value>
+  </data>
+  <data name="StatusListening" xml:space="preserve">
+    <value>👂 Listening for notifications…</value>
+  </data>
+  <data name="StatusStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="StatusNoPermission" xml:space="preserve">
+    <value>⚠️ Notification permission denied. Please grant access in System Settings.</value>
+  </data>
+  <data name="StatusError" xml:space="preserve">
+    <value>Error: {0}</value>
+  </data>
+
+  <!-- Buttons -->
+  <data name="BtnListen" xml:space="preserve">
+    <value>▶ Listen</value>
+  </data>
+  <data name="BtnStop" xml:space="preserve">
+    <value>⏹ Stop</value>
+  </data>
+  <data name="BtnStart" xml:space="preserve">
+    <value>▶ Start</value>
+  </data>
+  <data name="BtnDone" xml:space="preserve">
+    <value>✓ Done</value>
+  </data>
+  <data name="BtnIDE" xml:space="preserve">
+    <value>🔀 IDE</value>
+  </data>
+  <data name="BtnClearDone" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="BtnShowDone" xml:space="preserve">
+    <value>Show Done</value>
+  </data>
+  <data name="BtnHideDone" xml:space="preserve">
+    <value>Hide Done</value>
+  </data>
+
+  <!-- Stats bar -->
+  <data name="StatPending" xml:space="preserve">
+    <value> Pending</value>
+  </data>
+  <data name="StatInProgress" xml:space="preserve">
+    <value> In Progress</value>
+  </data>
+
+  <!-- Queue empty state -->
+  <data name="EmptyTitle" xml:space="preserve">
+    <value>Queue is empty</value>
+  </data>
+  <data name="EmptySubtitle" xml:space="preserve">
+    <value>AI notifications will appear here once you start listening.</value>
+  </data>
+
+  <!-- Manual entry -->
+  <data name="ManualPlaceholder" xml:space="preserve">
+    <value>Add task manually…</value>
+  </data>
+
+  <!-- Swipe action -->
+  <data name="SwipeDone" xml:space="preserve">
+    <value>Done ✓</value>
+  </data>
+
+  <!-- Manual source label -->
+  <data name="SourceManual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+</root>
