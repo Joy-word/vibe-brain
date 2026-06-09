@@ -14,7 +14,7 @@
        Version   → 与 .csproj 的 ApplicationDisplayVersion 保持一致（四段式）
   -->
   <Identity
-    Name="Heuo.BrainEx"
+    Name="21703FlyJoyce.BrainEx"
     Publisher="CN=E31D028F-5B65-4BCD-A608-331FFC458215"
     Version="1.0.0.0" />
 
@@ -24,7 +24,7 @@
 
   <Properties>
     <DisplayName>BrainEx</DisplayName>
-    <PublisherDisplayName>Heuo</PublisherDisplayName>
+    <PublisherDisplayName>FlyJoyce</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
   </Properties>
 
