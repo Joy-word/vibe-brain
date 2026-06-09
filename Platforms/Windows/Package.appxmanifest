@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap rescap mp">
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap rescap mp uap3">
 
   <!--
     ⚠️ 以下三个值必须与 Partner Center → 产品标识 完全一致：
@@ -13,7 +14,7 @@
        Version   → 与 .csproj 的 ApplicationDisplayVersion 保持一致（四段式）
   -->
   <Identity
-    Name="21703FlyJoyce.BrainEx"
+    Name="Heuo.BrainEx"
     Publisher="CN=E31D028F-5B65-4BCD-A608-331FFC458215"
     Version="1.0.0.0" />
 
@@ -23,7 +24,7 @@
 
   <Properties>
     <DisplayName>BrainEx</DisplayName>
-    <PublisherDisplayName>FlyJoyce</PublisherDisplayName>
+    <PublisherDisplayName>Heuo</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
   </Properties>
 
@@ -57,8 +58,7 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
-    <!-- 允许读取用户通知（UserNotificationListener） -->
-    <rescap:Capability Name="userNotificationListener" />
+    <uap3:Capability Name="userNotificationListener"/>
   </Capabilities>
 
 </Package>
