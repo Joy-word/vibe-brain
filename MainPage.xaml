@@ -57,7 +57,7 @@
         <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,*,Auto,Auto"
               Margin="0,0,0,10" ColumnSpacing="6">
 
-            <Frame Grid.Column="0"
+            <!-- <Frame Grid.Column="0"
                    BackgroundColor="#E8F8EC"
                    CornerRadius="10" Padding="10,3" HasShadow="False">
                 <Label  TextColor="White" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
@@ -82,7 +82,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-            </Frame>
+            </Frame> -->
 
             <BoxView Grid.Column="2" Color="Transparent" />
 
@@ -256,7 +256,7 @@
                                                 CornerRadius="8"
                                                 BackgroundColor="{AppThemeBinding Light=#FFF3E0, Dark=#3A2E00}"
                                                 TextColor="#FF9500"
-                                                IsVisible="{Binding IsInProgress}"
+                                                IsVisible="{Binding CanFocusIde}"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FocusIdeCommand}"
                                                 CommandParameter="{Binding .}" />
 

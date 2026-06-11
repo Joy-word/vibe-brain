@@ -77,6 +77,12 @@ public class TaskItem : INotifyPropertyChanged
     public bool IsDone       => Status == TaskStatus.Done;
     public bool IsNotDone    => Status != TaskStatus.Done;
 
+    /// <summary>是否有来源应用信息（用于决定是否显示「跳转 IDE」按钮）</summary>
+    public bool HasSourceApp => !string.IsNullOrWhiteSpace(SourceApp);
+
+    /// <summary>仅当进行中且有来源 App 时，才允许跳转 IDE</summary>
+    public bool CanFocusIde => IsInProgress && HasSourceApp;
+
     public DateTime CreatedAt { get; } = DateTime.Now;
 
     /// <summary>显示用时间戳，如 "10:23"</summary>
