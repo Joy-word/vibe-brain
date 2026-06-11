@@ -116,9 +116,18 @@ public static class AppActivator
 
     private static string[] ResolveProcessNames(string sourceApp)
     {
-        foreach (var kv in AppProcessMap)
+        if (string.IsNullOrWhiteSpace(sourceApp))
+            return [];
+
+        // ① 优先精确匹配，避免 "CodeX" 被 "code" 子串匹配劫持到 vscode
+        if (AppProcessMap.TryGetValue(sourceApp, out var exact))
+            return exact;
+
+        // ② 子串匹配按 key 长度从长到短，确保 "codex" 优先于 "code"
+        foreach (var kv in AppProcessMap.OrderByDescending(kv => kv.Key.Length))
             if (sourceApp.Contains(kv.Key, StringComparison.OrdinalIgnoreCase))
                 return kv.Value;
+
         return [sourceApp.ToLowerInvariant()];
     }
 
