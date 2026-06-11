@@ -16,7 +16,7 @@
   <Identity
     Name="21703FlyJoyce.BrainEx"
     Publisher="CN=E31D028F-5B65-4BCD-A608-331FFC458215"
-    Version="1.0.0.0" />
+    Version="1.0.2.0" />
 
   <mp:PhoneIdentity
     PhoneProductId="9128DAA3-13BF-4AB0-AE09-339A59B584A3"

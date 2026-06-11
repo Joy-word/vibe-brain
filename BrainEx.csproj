@@ -27,8 +27,8 @@
 		<ApplicationId>com.companyname.brainex</ApplicationId>
 
 		<!-- Versions：Store 要求四段式，如 1.0.0.0 -->
-		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+		<ApplicationVersion>2</ApplicationVersion>
 
 		<!-- 开发时用 None（可 F5 直接跑）；发布 Store 时通过 -p:WindowsPackageType=Msix 覆盖 -->
 		<WindowsPackageType>None</WindowsPackageType>
@@ -39,7 +39,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<DefaultLanguage>zh-cn</DefaultLanguage>
+		<DefaultLanguage>zh-Hans</DefaultLanguage>
 	</PropertyGroup>
 
 	<ItemGroup>
